@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4867,        132]
+NotebookOptionsPosition[      3980,        109]
+NotebookOutlinePosition[      4379,        125]
+CellTagsIndexPosition[      4336,        122]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["CHECKING NUMBER OF LMC PARTICLES", "Subsection",
+ CellChangeTimes->{
+  3.8045223262823887`*^9, {3.804522957855839*^9, 
+   3.804522966383523*^9}},ExpressionUUID->"7128c3eb-5dd4-49c9-9b3b-\
+b9daf71aa49b"],
+
+Cell["\<\
+Use Count in place of your For loop.  Count counts the elements of a list by \
+pattern matching.  It counts any value, symbolized by the  pattern \
+\[OpenCurlyDoubleQuote]x_ \[OpenCurlyDoubleQuote] that meets the Condition (\
+\[OpenCurlyDoubleQuote]/;\[CloseCurlyDoubleQuote] ) of x == - 1.  You can use \
+the operator form if it makes more sense to you, i.e., \
+\[OpenCurlyDoubleQuote]Count x\[CloseCurlyQuote]s, where x \[LessEqual] 1 in \
+the \[OpenCurlyQuote]dmTag00\[CloseCurlyQuote] list (or array or association, \
+etc.)\[CloseCurlyDoubleQuote].  First, I create a random sample of tags \
+(either -1 or 1) weighted by the percentage in your work.\
+\>", "Text",
+ CellChangeTimes->{{3.804522342760186*^9, 3.80452259287134*^9}, {
+  3.8045227407277184`*^9, 3.804522932943462*^9}, {3.804524412334032*^9, 
+  3.804524443966288*^9}, {3.804524537077162*^9, 3.8045245677024193`*^9}, {
+  3.804524610141533*^9, 3.8045247533180246`*^9}, {3.8045249733973627`*^9, 
+  3.8045250870447693`*^9}},ExpressionUUID->"c3f4c9bf-136c-4455-a601-\
+6564fc85cc5b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "168357"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dmTag00RV", "=", 
+   RowBox[{"RandomChoice", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{".17", ",", 
+        RowBox[{"1", "-", ".17"}]}], "}"}], "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", "n"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"nLMC", "=", 
+  RowBox[{"Count", "[", 
+   RowBox[{"dmTag00RV", ",", 
+    RowBox[{"x_", "/;", 
+     RowBox[{"x", "<=", 
+      RowBox[{"-", "1"}]}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Count", "[", 
+    RowBox[{"x_", "/;", 
+     RowBox[{"x", "==", 
+      RowBox[{"-", "1"}]}]}], "]"}], "[", "dmTag00RV", "]"}], "   ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Operator", " ", "form"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"nLMC", "/", "n"}], ",", "2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8045226706075573`*^9, 3.8045227370475616`*^9}, {
+  3.804524476742938*^9, 3.804524521271844*^9}, {3.804524771093331*^9, 
+  3.804524886525876*^9}, {3.8045249407251325`*^9, 3.804524943573618*^9}},
+ CellLabel->
+  "In[194]:=",ExpressionUUID->"8817cd31-19d1-431c-aed9-14b9d97dab74"],
+
+Cell[BoxData["28683"], "Output",
+ CellChangeTimes->{
+  3.8045226990872817`*^9, {3.8045245152363324`*^9, 3.804524529425604*^9}, 
+   3.8045248540155525`*^9, 3.804524946485673*^9},
+ CellLabel->
+  "Out[196]=",ExpressionUUID->"aecfbeb7-ad54-4b30-b939-02774b5d58f5"],
+
+Cell[BoxData["28683"], "Output",
+ CellChangeTimes->{
+  3.8045226990872817`*^9, {3.8045245152363324`*^9, 3.804524529425604*^9}, 
+   3.8045248540155525`*^9, 3.8045249465335445`*^9},
+ CellLabel->
+  "Out[197]=",ExpressionUUID->"4d95a7eb-b236-4df7-8d9f-1b35d667fe11"],
+
+Cell[BoxData["0.1703701063810830556`2."], "Output",
+ CellChangeTimes->{
+  3.8045226990872817`*^9, {3.8045245152363324`*^9, 3.804524529425604*^9}, 
+   3.8045248540155525`*^9, 3.804524946534543*^9},
+ CellLabel->
+  "Out[198]=",ExpressionUUID->"a6b07b93-d8df-4e9a-83b3-d2410a3fb4ad"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1271, 855},
+WindowMargins->{{25, Automatic}, {Automatic, 31}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"dd1e602e-6394-4083-a277-7eb68598f750"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 208, 4, 53, "Subsection",ExpressionUUID->"7128c3eb-5dd4-49c9-9b3b-b9daf71aa49b"],
+Cell[791, 28, 1051, 16, 78, "Text",ExpressionUUID->"c3f4c9bf-136c-4455-a601-6564fc85cc5b"],
+Cell[CellGroupData[{
+Cell[1867, 48, 1275, 36, 105, "Input",ExpressionUUID->"8817cd31-19d1-431c-aed9-14b9d97dab74"],
+Cell[3145, 86, 260, 5, 32, "Output",ExpressionUUID->"aecfbeb7-ad54-4b30-b939-02774b5d58f5"],
+Cell[3408, 93, 262, 5, 32, "Output",ExpressionUUID->"4d95a7eb-b236-4df7-8d9f-1b35d667fe11"],
+Cell[3673, 100, 279, 5, 32, "Output",ExpressionUUID->"a6b07b93-d8df-4e9a-83b3-d2410a3fb4ad"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
